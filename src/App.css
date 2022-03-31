@@ -52,3 +52,50 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
+.topnav {
+  overflow: hidden;
+  background-color: #fff2e6;
+}
+
+.topnav a {
+  float: left;
+  color: #707070  ;
+  text-align: bottom;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.topnav-right {
+  float: right;
+}
+
+.button {
+  top: 4%;
+  left:90%;
+  background-color: #ffffff;
+  border: 1px solid #c4b2b2;
+  color: rgb(255, 255, 255);
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  margin: 2px 2px;
+  cursor: pointer;
+  width: 75px;
+  line-height: 10px;
+  position: absolute;
+ 
+}
