@@ -11,7 +11,8 @@ app.use(cors());
 app.use(express.json());
 
 const uri = process.env.ATLAS_URI;
-mongoose.connect(uri, { useNewUrlParser: true}
+mongoose.connect("mongodb+srv://Anca:anca@cluster0.hxzx8.mongodb.net/MyFirstDatabase?retryWrites=true&w=majority"
+
 );
 const connection = mongoose.connection;
 connection.once('open', () => {
@@ -26,6 +27,6 @@ app.use('/surveys', surveysRouter);
 app.use('/surveyResponses', surveyResponsesRouter);
 app.use('/admins', adminsRouter);
 
-app.listen(port,()=>{
+app.listen(5000,()=>{
     console.log(`Server is running on port: ${port}`);
 });
