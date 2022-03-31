@@ -2,7 +2,7 @@ import React from 'react';
 import {useState,useEffect} from 'react';
 import "bootstrap/dist/css/bootstrap.min.css"
 import Axios from "axios";
-import "C:/Users/ASUS/Desktop/ANCA/FACULTA/AN3/SEM2/IC/proiect/hire-me/src/App.css";
+import "../App.css";
 
 function ShowAdminsList() {
   const [ListOfAdmins,setListOfAdmins] =useState([]);
