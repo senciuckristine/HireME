@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const errorHandler = require("./middleware/error");
+
 
 require('dotenv').config();
 
@@ -33,6 +35,7 @@ app.use('/api/auth',require('./routes/auth'));
 const server = app.listen(5000,()=>{
     console.log(`Server is running on port: ${port}`);
 });
+app.use(errorHandler);
 process.on("unhandledRejection",(err,promise)=>{
   console.log(`Logged Error: ${err}`);
   server.close(()=> process.exit(1));

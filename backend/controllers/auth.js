@@ -1,22 +1,21 @@
 const admins = require("../models/admin.model");
 const bcrypt = require("bcrypt");
+const ErrorResponse = require("../utils/errorResponse");
 exports.login=async(req,res,next) => {
     const {username,password} = req.body;
 
     if(!username || !password){
-      return  res.status(400).json({
-            success:false, error:"please provide username and password!"
-        })
+        return next(new ErrorResponse("Please provide an email and password", 400));
     }
     try{
         const admin = await admins.findOne({username}).select("+password");
 
         if(!admin){
-            return res.status(404).json({success:false, error:"invalid username!"})
+            return next(new ErrorResponse("Invalid username", 401));
         }
         const isMatch = await admin.matchPasswords(password);
         if(!isMatch){
-           return  res.status(404).json({success:false, error:"invalid password"})
+            return next(new ErrorResponse("Invalid password", 401));
 
         }
        return res.status(200).json({
@@ -24,8 +23,6 @@ exports.login=async(req,res,next) => {
             token:"tr34f3443fc",
         });
     }catch(error){
-       return res.status(500).json({
-           success: false,error: error.message
-       });
+        next(error);
     }
 };

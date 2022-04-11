@@ -23,13 +23,10 @@ const login = () => {
 			localStorage.setItem("token", res.data);
 			window.location = "/adminslist";
 		} catch (error) {
-			if (
-				error.response &&
-				error.response.status >= 400 &&
-				error.response.status <= 500
-			) {
-				setError(error.response.data.message);
-			}
+			setError(error.response.data.error);
+			setTimeout(() => {
+			  setError("");
+			}, 5000);
 		}
 	};
 
@@ -57,7 +54,7 @@ const login = () => {
 							required
 							className={styles.input}
 						/>
-						{error && <div className={styles.error_msg}>{error}</div>}
+						{error && <div className={styles.error_message}>{error}</div>}
 						<button type="submit" className={styles.green_btn}>
 							Sing In
 						</button>
