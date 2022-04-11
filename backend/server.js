@@ -23,10 +23,18 @@ const surveysRouter = require('./routes/surveys');
 const surveyResponsesRouter = require('./routes/surveyResponses');
 const adminsRouter = require('./routes/admins');
 
+
 app.use('/surveys', surveysRouter);
 app.use('/surveyResponses', surveyResponsesRouter);
 app.use('/admins', adminsRouter);
+app.use('/api/auth',require('./routes/auth'));
 
-app.listen(5000,()=>{
+
+const server = app.listen(5000,()=>{
     console.log(`Server is running on port: ${port}`);
+});
+process.on("unhandledRejection",(err,promise)=>{
+  console.log(`Logged Error: ${err}`);
+  server.close(()=> process.exit(1));
+  
 });
