@@ -29,6 +29,12 @@ const adminSchema = new Schema({
 }, {
   timestamps: true,
 });
+adminSchema.methods.generateAuthToken = function(){
+  const token = jwt.sign({_id:this._id},process.env.JWTPRIVATEKEY, {
+		expiresIn: "7d",
+	});
+	return token;
+};
 adminSchema.pre("save", async function (next) {
   if (!this.isModified("password")) {
     next();

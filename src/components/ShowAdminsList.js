@@ -2,7 +2,8 @@ import React from 'react';
 import {useState,useEffect} from 'react';
 import "bootstrap/dist/css/bootstrap.min.css"
 import Axios from "axios";
-import "../App.css";
+import styles from "../App.css";
+
 
 function ShowAdminsList() {
   const [ListOfAdmins,setListOfAdmins] =useState([]);
@@ -35,9 +36,10 @@ function ShowAdminsList() {
     });
   };
   return (
-    <div className="App">
-     <div >
-       <table>
+    <div  >
+     <div  >
+     
+       <table className="centerTable">
      <tr>
     <th>UserName</th>
     <th>Name</th>
@@ -48,9 +50,9 @@ function ShowAdminsList() {
               
  
               <tr>
-              <th> {admins.username}</th>
-               <th>{admins.name} </th>
-                <th>{admins.company}</th>
+              <td> {admins.username}</td>
+               <td>{admins.name} </td>
+                <td>{admins.company}</td>
               
               <br/>
               </tr>
@@ -62,14 +64,15 @@ function ShowAdminsList() {
           })}
           </table>
      </div>
-     <div>
-       <input type="text" placeholder="UserName.." onChange={(event)=>{
+     <br></br>
+     <div className="centerTable" >
+       <input   className="inputStyle" type="text" placeholder="UserName.." onChange={(event)=>{
          setUserName(event.target.value);
          }}/>
-       <input type="text" placeholder="Name.." onChange={(event)=>{setName(event.target.value)}}/>
-       <input type="text" placeholder="Company.." onChange={(event)=>{setCompany(event.target.value)}}/>
-       <input type="text" placeholder="Password.." onChange={(event)=>{setPassword(event.target.value)}}/>
-       <button onClick ={createNewAdmin}>Create new Admin</button>
+       <input className="inputStyle" type="text" placeholder="Name.." onChange={(event)=>{setName(event.target.value)}}/>
+       <input className="inputStyle" type="text" placeholder="Company.." onChange={(event)=>{setCompany(event.target.value)}}/>
+       <input className="inputStyle" type="text" placeholder="Password.." onChange={(event)=>{setPassword(event.target.value)}}/>
+       <button  onClick ={createNewAdmin}>Create new Admin</button>
      </div>
     </div>
   );

@@ -36,4 +36,8 @@ const validate = (data) => {
 	return schema.validate(data);
 };
 */
+router.get('/logout',(req,res)=>{
+	res.clearCookie('jwtoken',{path:'/'});
+    res.status(200).send('user logout');
+});
 module.exports = router;

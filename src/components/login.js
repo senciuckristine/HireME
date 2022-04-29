@@ -1,26 +1,31 @@
 import React, { Component } from 'react';
 //import { BrowserRouter as Router, Route } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css"
-
-import { useState } from "react";
+import {useDispatch,useSelector} from 'react-redux';
+import { useState,useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import styles from "../styles.module.css";
 
 const login = () => {
+	
+	
 	const [data, setData] = useState({ username: "", password: "" });
 	const [error, setError] = useState("");
 
 	const handleChange = ({ currentTarget: input }) => {
 		setData({ ...data, [input.name]: input.value });
 	};
+    useEffect(()=>{
 
+	},[])
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
 			const url = "http://localhost:5000/api/auth/login";
 			const { data: res } = await axios.post(url, data);
 			localStorage.setItem("token", res.data);
+			localStorage.setItem("currentLoggedAdmin",data.username);
 			window.location = "/adminslist";
 		} catch (error) {
 			setError(error.response.data.error);
@@ -38,7 +43,7 @@ const login = () => {
 						<h1>Login to Your Account</h1>
 						<input
 							type="username"
-							placeholder="username"
+							placeholder="Username"
 							name="username"
 							onChange={handleChange}
 							value={data.username}
@@ -56,7 +61,7 @@ const login = () => {
 						/>
 						{error && <div className={styles.error_message}>{error}</div>}
 						<button type="submit" className={styles.green_btn}>
-							Sing In
+							Sign In
 						</button>
 					</form>
 				</div>
