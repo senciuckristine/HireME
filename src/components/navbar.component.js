@@ -15,6 +15,13 @@ export default class Navbar extends Component {
    localStorage.removeItem("token");
    window.location = "/login";
  }
+ const handleLogin = () => {
+  window.location = "/login";
+}
+
+ const handleMyProfile = () => {
+  window.location = "/adminslist";
+}
     return (
       
       <nav className="topnav">
@@ -26,15 +33,21 @@ export default class Navbar extends Component {
         <ul className ="topnav-right" >
           
         <li className="navbar-item">
-          {!user && <Link to="/login" className ="button">Login</Link>}
+          {!user && <button className = "button_2"  onClick={handleLogin}>Login</button>}
           </li>
           
         </ul>
-        <ul className ="topnav-left" >
-         {user && <button className = "button_2 " onClick={handleLogout}>Logout</button>}
+        <ul className ="topnav-right" >
+         {user && <button className = "button_2 "  onClick={handleLogout}>Logout</button>}
         
           
         </ul>
+        <ul className ="topnav-right" >
+         {user && <button className = "button_3 "  onClick={handleMyProfile}>My Profile</button>}
+        
+          
+        </ul>
+        
         </div>
         
         {user && <p className="pstyle"> {currentLogged}

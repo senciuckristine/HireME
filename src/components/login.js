@@ -36,11 +36,13 @@ const login = () => {
 	};
 
 	return (
+		<body background="back3.jpg">
 		<div className={styles.login_container}>
 			<div className={styles.login_form_container}>
 				<div className={styles.left}>
 					<form className={styles.form_container} onSubmit={handleSubmit}>
-						<h1>Login to Your Account</h1>
+						<h1>Account Login</h1>
+						<br></br>
 						<input
 							type="username"
 							placeholder="Username"
@@ -68,6 +70,7 @@ const login = () => {
 				
 			</div>
 		</div>
+		</body>
 	);
 };
 

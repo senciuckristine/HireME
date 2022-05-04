@@ -36,7 +36,16 @@ function ShowAdminsList() {
     });
   };
   return (
-    <div  >
+    <body  background="back3.jpg">
+    <div>
+      <br></br>
+      <h7>My Profile</h7>
+      <br></br>
+      <br></br>
+      <h2>Personal information</h2>
+      <br></br>
+      <h2>List of currently active administrators</h2>
+
      <div  >
      
        <table className="centerTable">
@@ -65,16 +74,35 @@ function ShowAdminsList() {
           </table>
      </div>
      <br></br>
-     <div className="centerTable" >
-       <input   className="inputStyle" type="text" placeholder="UserName.." onChange={(event)=>{
+     <br></br>
+     <div className="grid">
+     <br></br>
+     <h2>Add a new administrator</h2>
+     <br></br>
+     <div className="splitscreen" >
+       <div className="left"> 
+        <input   className="inputStyle" type="text" placeholder="UserName.." onChange={(event)=>{
          setUserName(event.target.value);
          }}/>
-       <input className="inputStyle" type="text" placeholder="Name.." onChange={(event)=>{setName(event.target.value)}}/>
+         <br></br> <p>  </p>
+        <input className="inputStyle" type="text" placeholder="Name.." onChange={(event)=>{setName(event.target.value)}}/>
+      </div>
+      
+       <div className="right">
        <input className="inputStyle" type="text" placeholder="Company.." onChange={(event)=>{setCompany(event.target.value)}}/>
+       <br></br> <p>  </p>
        <input className="inputStyle" type="text" placeholder="Password.." onChange={(event)=>{setPassword(event.target.value)}}/>
-       <button  onClick ={createNewAdmin}>Create new Admin</button>
+       
+       
+       </div>
      </div>
+     
+     <button className="button0" onClick ={createNewAdmin}>Create new admin</button>
+     <br></br>
+     </div>
+     <br></br><br></br><br></br><br></br>
     </div>
+    </body>
   );
 }
 

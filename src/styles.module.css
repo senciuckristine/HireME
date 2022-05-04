@@ -1,17 +1,18 @@
 .login_container {
 	width: 100%;
-	min-height: 85vh;
-	background-color: #A6D4D9;
+	min-height: 90vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
 .login_form_container {
-	width: 700px;
-	height: 400px;
+	width: 900px;
+	height: 600px;
 	display: flex;
 	border-radius: 10px;
+	background-color: #A6D4D9;
+	
 	
 }
 
@@ -21,9 +22,8 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background-color: #A6D4D9;
-	border-top-left-radius: 10px;
-	border-bottom-left-radius: 10px;
+	border-color: #A6D4D9;
+	
 }
 
 .form_container {
@@ -101,8 +101,8 @@
 .green_btn {
 	border:2px solid #c4b2b2;
 	background-color:  #A6D4D9;
-	color: white;
-	border-color: rgb(250, 249, 249);
+	color: #5b5b5b !important;
+	border-color: #5b5b5b;
 	margin: 10px;
 }
 .li{
