@@ -12,6 +12,11 @@ function ShowAdminsList() {
   const[company,setCompany]=useState("");
   const[password,setPassword]=useState("");
 
+  var user1 = JSON.parse(localStorage.getItem('currentUser'));
+  const currentLogged = localStorage.getItem("currentLoggedAdmin");
+
+  const res = ListOfAdmins.filter(it => it.username.includes(currentLogged));
+
   useEffect(()=>{
      Axios.get("http://localhost:5000/admins/").then((response)=>{
       setListOfAdmins(response.data);
@@ -42,8 +47,27 @@ function ShowAdminsList() {
       <h7>My Profile</h7>
       <br></br>
       <br></br>
-      <h2>Personal information</h2>
+      <div className="grid">
       <br></br>
+      <h2>Personal information</h2>
+      <div className="splitscreen" >
+      <div className="left"> 
+        <h4>Username: </h4>
+        <h4>Name: </h4>
+        <h4>Company: </h4>
+      </div>
+        {res.map((admin)=>{
+          return(
+            <div className="right">
+            <h4>{admin.username}</h4>
+            <h4>{admin.name}</h4>
+            <h4>{admin.company}</h4>
+            </div>
+          );
+        })}
+      </div>
+      </div>
+      <br></br><br></br>
       <h2>List of currently active administrators</h2>
 
      <div  >

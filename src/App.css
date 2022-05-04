@@ -16,6 +16,12 @@ h1 {
   color: #5b5b5b;
 }
 
+h4{
+  color: #5b5b5b;
+  font-size: 22px;
+  margin-left: 5%;
+}
+
 .App {
   text-align: center;
 }
@@ -222,7 +228,7 @@ th {
 }
 .splitscreen .right{
   flex: 1;
-  margin-right: 70%;
+  margin-right: 20%;
 }
 
 .grid{
