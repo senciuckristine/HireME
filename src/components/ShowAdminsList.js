@@ -40,6 +40,9 @@ function ShowAdminsList() {
       ]);
     });
   };
+  const createNewSurvey = () => {
+    window.location = "/createSurvey";
+  }
   return (
     <body  background="back3.jpg">
     <div>
@@ -124,7 +127,16 @@ function ShowAdminsList() {
      <button className="button0" onClick ={createNewAdmin}>Create new admin</button>
      <br></br>
      </div>
-     <br></br><br></br><br></br><br></br>
+     <br></br><br></br>
+     <div className="grid">
+     <br></br>
+     <h2>Add a new survey!</h2>
+     <h4>Click on the button below to create a new survey:</h4>
+     <button className="button0" onClick ={createNewSurvey}>Create your survey</button>
+     <br></br>
+     </div>
+     <br></br>
+     <br></br>
     </div>
     </body>
   );

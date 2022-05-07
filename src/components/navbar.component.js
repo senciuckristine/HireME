@@ -19,7 +19,9 @@ export default class Navbar extends Component {
   window.location = "/login";
 }
 
-
+ const handleCreateSurvey = () => {
+  window.location = "/createSurvey";
+}
     return (
       
       <nav className="topnav">
@@ -40,7 +42,11 @@ export default class Navbar extends Component {
         
           
         </ul>
-       
+        <ul className ="topnav-right" >
+         {user && <button className = "button_3 "  onClick={handleCreateSurvey}>Create survey</button>}
+        
+          
+        </ul>
         
         </div>
         
