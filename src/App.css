@@ -202,9 +202,9 @@ th {
 
 .pstyle{
  
-  text-align: left;
-  padding: 30px;
+  margin-left: 1%;
   color: #5b5b5b;
+  line-height: 60px;
 }
 
 .inputStyle{

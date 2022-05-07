@@ -19,9 +19,7 @@ export default class Navbar extends Component {
   window.location = "/login";
 }
 
- const handleMyProfile = () => {
-  window.location = "/adminslist";
-}
+
     return (
       
       <nav className="topnav">
@@ -42,16 +40,11 @@ export default class Navbar extends Component {
         
           
         </ul>
-        <ul className ="topnav-right" >
-         {user && <button className = "button_3 "  onClick={handleMyProfile}>My Profile</button>}
-        
-          
-        </ul>
+       
         
         </div>
         
-        {user && <p className="pstyle"> {currentLogged}
-        </p>}
+        {user && <a className="pstyle" href="/adminslist"> {currentLogged} </a>}
         
       </nav>
      
