@@ -1,33 +1,34 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {useState,useEffect} from 'react';
 import "bootstrap/dist/css/bootstrap.min.css"
 import Axios from "axios";
-import styles from "../App.css";
+//import styles from "../App.css";
 import axios from 'axios';
 
 const questions = [];
 
 function createSurvey(){
+    
     const[code,setCode]=useState("");
     const[question,setQuestion]=useState("");
     const username = localStorage.getItem("currentLoggedAdmin");
 
     const addQuestion = () => {
         questions.push(question);
-        console.log(questions);
         setQuestion("");
     }
-
+    
     const addSurvey = () => {
         for(const q of questions){
-        /*axios.post("http://localhost:5000/surveys/add",{
-            username,
-            code,
-            q,
-          }).then((response)=>console.log(response.data));*/
-          console.log(code);
-          console.log(username);
-          console.log(q);
+        axios.post("http://localhost:5000/surveys/add",{
+            username: username,
+            id: code,
+            question:q,
+          }).then((response)=>{
+            console.log(code);
+            console.log(username);
+            console.log(q);
+            });
         }
     };
 

@@ -2,7 +2,7 @@ import React from 'react';
 import {useState,useEffect} from 'react';
 import "bootstrap/dist/css/bootstrap.min.css"
 import Axios from "axios";
-import styles from "../App.css";
+//import styles from "../App.css";
 
 
 function ShowAdminsList() {
@@ -12,7 +12,7 @@ function ShowAdminsList() {
   const[company,setCompany]=useState("");
   const[password,setPassword]=useState("");
 
-  var user1 = JSON.parse(localStorage.getItem('currentUser'));
+  //var user1 = JSON.parse(localStorage.getItem('currentUser'));
   const currentLogged = localStorage.getItem("currentLoggedAdmin");
 
   const res = ListOfAdmins.filter(it => it.username.includes(currentLogged));

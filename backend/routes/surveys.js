@@ -1,5 +1,5 @@
 const router = require('express').Router();
-let Survey = require('../models/survey.model');
+let Survey = require('../models/survey.model.js');
 
 router.route('/').get((req, res) => {
   Survey.find()
@@ -14,9 +14,9 @@ router.route('/add').post((req, res) => {
   
 
   const newSurvey = new Survey({
-    username,
-    id,
-    question,
+    username: username,
+    id: id,
+    question: question,
   });
 
   newSurvey.save()

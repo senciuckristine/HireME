@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import "../App.css";
 
 
-import {Nav,NavDropdown} from 'react-bootstrap';
+//import {Nav,NavDropdown} from 'react-bootstrap';
 
 export default class Navbar extends Component {
   render() {
-    var user1 = JSON.parse(localStorage.getItem('currentUser'));
+    //var user1 = JSON.parse(localStorage.getItem('currentUser'));
   const user = localStorage.getItem("token");
   const currentLogged = localStorage.getItem("currentLoggedAdmin");
 
