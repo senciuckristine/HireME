@@ -151,7 +151,7 @@ th {
   text-decoration: none;
   display: inline-block;
   font-size: 15px;
-  margin: 2px 2px;
+  
   cursor: pointer;
   width: 75px;
   line-height: 40px;
@@ -169,7 +169,7 @@ th {
   text-decoration: none;
   display: inline-block;
   font-size: 15px;
-  margin: 2px 2px;
+  
   cursor: pointer;
   width: 110px;
   line-height: 40px;
@@ -270,12 +270,33 @@ th {
 .grid2{
   border: 1px solid #A6D4D9;
   background-color:#A6D4D9 ;
-  display: inline-grid;
-  
-  margin-left: 35%;
+  display: grid;
+  margin-left: auto;
+  margin-right: auto;
   width: 600px;
-  height: 500px;
+  height: 550px;
   border-radius: 12px;
 }
 
+.alert{
+  padding: 15px;
+  background-color: #f44336; /* Red */
+  color: white;
+  margin-bottom: 20px;
+  width: 550px;
+  font-size: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.success{
+  padding: 15px;
+  background-color: #17e74b; /* Red */
+  color: white;
+  margin-bottom: 20px;
+  width: 550px;
+  font-size: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
 

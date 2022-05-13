@@ -29,7 +29,7 @@ export default class Navbar extends Component {
              <img src="logo192.png" alt="" width="50" height="63"/>
         </Link>
             
-        <div className="collpase navbar-collapse">
+        <div>
         <ul className ="topnav-right" >
           
         <li className="navbar-item">
