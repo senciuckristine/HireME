@@ -6,7 +6,6 @@ const surveyResponseSchema = new Schema({
     id: {
         type: String,
         required: true,
-        unique: true,
         trim: true,
         minlength: 5,
         maxlength: 5

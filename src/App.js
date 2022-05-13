@@ -7,6 +7,7 @@ import Login from "./components/login";
 import Home from "./components/HomePage";
 import ShowAdminsList from "./components/ShowAdminsList";
 import Logout from "./components/logout";
+import CreateSurvey from "./components/createSurvey";
 const App = () =>(
   <BrowserRouter>
    <NavBar />
@@ -15,6 +16,7 @@ const App = () =>(
      <Route  path="/login" element={<Login/>} />
      <Route  path="/adminslist" element={<ShowAdminsList/>} />
      <Route  path="/logout" element={<Logout/>} />
+     <Route path="/createSurvey" element={<CreateSurvey/>}/>
    </Routes >
   </BrowserRouter>
 )

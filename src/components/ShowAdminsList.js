@@ -2,7 +2,7 @@ import React from 'react';
 import {useState,useEffect} from 'react';
 import "bootstrap/dist/css/bootstrap.min.css"
 import Axios from "axios";
-import styles from "../App.css";
+//import styles from "../App.css";
 
 
 function ShowAdminsList() {
@@ -11,6 +11,11 @@ function ShowAdminsList() {
   const[name,setName]=useState("");
   const[company,setCompany]=useState("");
   const[password,setPassword]=useState("");
+
+  //var user1 = JSON.parse(localStorage.getItem('currentUser'));
+  const currentLogged = localStorage.getItem("currentLoggedAdmin");
+
+  const res = ListOfAdmins.filter(it => it.username.includes(currentLogged));
 
   useEffect(()=>{
      Axios.get("http://localhost:5000/admins/").then((response)=>{
@@ -35,8 +40,39 @@ function ShowAdminsList() {
       ]);
     });
   };
+  const createNewSurvey = () => {
+    window.location = "/createSurvey";
+  }
   return (
-    <div  >
+    <body  background="back3.jpg">
+    <div>
+      <br></br>
+      <h7>My Profile</h7>
+      <br></br>
+      <br></br>
+      <div className="grid">
+      <br></br>
+      <h2>Personal information</h2>
+      <div className="splitscreen" >
+      <div className="left"> 
+        <h4>Username: </h4>
+        <h4>Name: </h4>
+        <h4>Company: </h4>
+      </div>
+        {res.map((admin)=>{
+          return(
+            <div className="right">
+            <h4>{admin.username}</h4>
+            <h4>{admin.name}</h4>
+            <h4>{admin.company}</h4>
+            </div>
+          );
+        })}
+      </div>
+      </div>
+      <br></br><br></br>
+      <h2>List of currently active administrators</h2>
+
      <div  >
      
        <table className="centerTable">
@@ -65,16 +101,44 @@ function ShowAdminsList() {
           </table>
      </div>
      <br></br>
-     <div className="centerTable" >
-       <input   className="inputStyle" type="text" placeholder="UserName.." onChange={(event)=>{
+     <br></br>
+     <div className="grid">
+     <br></br>
+     <h2>Add a new administrator</h2>
+     <br></br>
+     <div className="splitscreen" >
+       <div className="left"> 
+        <input   className="inputStyle" type="text" placeholder="UserName.." onChange={(event)=>{
          setUserName(event.target.value);
          }}/>
-       <input className="inputStyle" type="text" placeholder="Name.." onChange={(event)=>{setName(event.target.value)}}/>
+         <br></br> <p>  </p>
+        <input className="inputStyle" type="text" placeholder="Name.." onChange={(event)=>{setName(event.target.value)}}/>
+      </div>
+      
+       <div className="right">
        <input className="inputStyle" type="text" placeholder="Company.." onChange={(event)=>{setCompany(event.target.value)}}/>
+       <br></br> <p>  </p>
        <input className="inputStyle" type="text" placeholder="Password.." onChange={(event)=>{setPassword(event.target.value)}}/>
-       <button  onClick ={createNewAdmin}>Create new Admin</button>
+       
+       
+       </div>
      </div>
+     
+     <button className="button0" onClick ={createNewAdmin}>Create new admin</button>
+     <br></br>
+     </div>
+     <br></br><br></br>
+     <div className="grid">
+     <br></br>
+     <h2>Add a new survey!</h2>
+     <h4>Click on the button below to create a new survey:</h4>
+     <button className="button0" onClick ={createNewSurvey}>Create your survey</button>
+     <br></br>
+     </div>
+     <br></br>
+     <br></br>
     </div>
+    </body>
   );
 }
 

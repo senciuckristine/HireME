@@ -6,7 +6,7 @@ const surveySchema = new Schema({
   id: {
     type: String,
     required: true,
-    unique: true,
+    unique: false,
     trim: true,
     minlength: 5,
     maxlength: 5
@@ -14,13 +14,14 @@ const surveySchema = new Schema({
   username: {
     type: String,
     required: true,
-    unique: true,
+    unique: false,
     trim: true,
     minlength: 3
   },
   question: {
     type: String,
     required: true,
+    unique: false,
     minlength: 1,
   }
 }, {

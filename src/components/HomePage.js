@@ -5,10 +5,12 @@ export default class HomePage extends Component {
 
   render () {
     return (
+      <body background="back3.jpg">
       <div>
         <h1>Hello, world!</h1>
         <p>Welcome to your new single-page application, built with:</p>
          </div>
+         </body>
     );
   }
 }
