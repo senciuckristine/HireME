@@ -9,6 +9,7 @@ import ShowAdminsList from "./components/ShowAdminsList";
 import Logout from "./components/logout";
 import CreateSurvey from "./components/createSurvey";
 import TakeSurvey from "./components/TakeSurvey";
+
 const App = () =>(
   <BrowserRouter>
    <NavBar />
@@ -21,7 +22,7 @@ const App = () =>(
      <Route path="/takeSurvey" element={<TakeSurvey/>}/>
    </Routes >
   </BrowserRouter>
+ 
 )
-
 
 export default App;

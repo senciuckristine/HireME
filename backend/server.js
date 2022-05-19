@@ -3,7 +3,6 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const errorHandler = require("./middleware/error");
 
-
 require('dotenv').config();
 
 const app = express();
@@ -30,7 +29,6 @@ app.use('/surveys', surveysRouter);
 app.use('/surveyResponses', surveyResponsesRouter);
 app.use('/admins', adminsRouter);
 app.use('/api/auth',require('./routes/auth'));
-//app.use('/api/takesurv',require('./routes/takesurv'));
 
 
 const server = app.listen(5000,()=>{

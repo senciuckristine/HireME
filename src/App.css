@@ -40,6 +40,19 @@ h4{
   font-size: 22px;
   margin-left: 5%;
 }
+.h44{
+  
+  font-size: 22px;
+  color: #5b5b5b;
+  margin-left: 5%;
+}
+.h444{
+  
+  font-size: 22px;
+  color: #5b5b5b;
+  margin-left: 5%;
+  margin-right: 4%;
+}
 
 .App {
   text-align: center;
@@ -250,6 +263,22 @@ th {
   
  
 }
+.button0111{
+  background-color: #A6D4D9;
+  border: 2px solid rgb(250, 249, 249);
+  color: #5b5b5b !important;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  
+  font-size: 17px;
+  margin-left: 5%;
+  
+  width: 150px;
+  height: 50px;
+  
+ 
+}
 .pstyle{
  
   margin-left: 1%;
@@ -281,6 +310,11 @@ th {
   height: 35px;
   margin-left: 43%;
   
+}
+
+textarea{
+    width:400px;
+    margin-left: 5%;
 }
 
 .splitscreen{
@@ -318,6 +352,16 @@ th {
   height: 550px;
   border-radius: 12px;
 }
+.grid3{
+  border: 1px solid #A6D4D9;
+  background-color:#A6D4D9 ;
+  display: grid;
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;
+  height: auto;
+  border-radius: 12px;
+}
 
 .alert{
   padding: 15px;
@@ -339,5 +383,18 @@ th {
   font-size: 20px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.admin-question{
+  top: 5%;
+  left: 68%;
+  
+  color: #5b5b5b !important;
+  
+  display: inline-block;
+  font-size: 18px;
+  
+  
+  position: absolute;
 }
 

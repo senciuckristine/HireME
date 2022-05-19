@@ -18,20 +18,22 @@ export default class Navbar extends Component {
  const handleLogin = () => {
   window.location = "/login";
 }
-
+const removeSurveyToken = () =>{
+  localStorage.removeItem("tokenSurvey");
+}
  const handleCreateSurvey = () => {
   window.location = "/createSurvey";
 }
     return (
       
       <nav className="topnav">
-        <Link to="/">
+        <Link onClick={removeSurveyToken} to="/">
              <img src="logo192.png" alt="" width="50" height="63"/>
         </Link>
             
         <div>
         <ul className ="topnav-right" >
-          
+        {!user &&<p className="admin-question">Are you an administrator? Please, </p>} 
         <li className="navbar-item">
           {!user && <button className = "button_2"  onClick={handleLogin}>Login</button>}
           </li>

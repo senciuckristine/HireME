@@ -17,9 +17,13 @@ const surveyResponseSchema = new Schema({
     },
     answer: {
         type: String,
-        required: true,
         minlength: 1
-    }
+    },
+    question: {
+      type: String,
+      required: true,
+      minlength: 1
+  }
 }, {
   timestamps: true,
 });
