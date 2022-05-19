@@ -17,6 +17,12 @@ h6 {
   color: #5b5b5b;
 
 }
+h5 {
+  font-size: 30px;
+  color: #5b5b5b;
+
+}
+
 
 h2 {
   margin-left: 5%;
@@ -27,6 +33,7 @@ h1 {
   
   color: #5b5b5b;
 }
+
 
 h4{
   color: #5b5b5b;
@@ -211,7 +218,38 @@ th {
   position: relative;
  
 }
-
+.button01{
+  background-color: #A6D4D9;
+  border: 2px solid rgb(250, 249, 249);
+  color: #5b5b5b !important;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  
+  font-size: 17px;
+  margin-left: 40%;
+  margin-top:13%;
+  width: 200px;
+  height: 60px;
+  
+ 
+}
+.button011{
+  background-color: #A6D4D9;
+  border: 2px solid rgb(250, 249, 249);
+  color: #5b5b5b !important;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  
+  font-size: 17px;
+  margin-left: 43%;
+  margin-top:2%;
+  width: 150px;
+  height: 50px;
+  
+ 
+}
 .pstyle{
  
   margin-left: 1%;
@@ -237,7 +275,13 @@ th {
   margin-left: 5%;
   
 }
-
+.inputStyle4{
+  border: 1px solid #A6D4D9;  
+  width: 150px;
+  height: 35px;
+  margin-left: 43%;
+  
+}
 
 .splitscreen{
   display: flex;

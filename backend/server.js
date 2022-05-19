@@ -30,6 +30,7 @@ app.use('/surveys', surveysRouter);
 app.use('/surveyResponses', surveyResponsesRouter);
 app.use('/admins', adminsRouter);
 app.use('/api/auth',require('./routes/auth'));
+//app.use('/api/takesurv',require('./routes/takesurv'));
 
 
 const server = app.listen(5000,()=>{
