@@ -11,11 +11,13 @@ router.route('/add').post((req, res) => {
   const id = req.body.id;
   const name = req.body.name;
   const answer = req.body.answer;
+  const question = req.body.question;
 
   const newSurveyResponse = new SurveyResponse({
     id,
     name,
     answer,
+    question,
   });
 
   newSurveyResponse.save()

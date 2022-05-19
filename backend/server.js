@@ -3,7 +3,6 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const errorHandler = require("./middleware/error");
 
-
 require('dotenv').config();
 
 const app = express();
