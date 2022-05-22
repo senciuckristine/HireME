@@ -6,7 +6,21 @@ router.route('/').get((req, res) => {
     .then(admins => res.json(admins))
     .catch(err => res.status(400).json('Error: ' + err));
 });
+router.route('/edit').post((req, res) => {
 
+  
+  const name = req.body.name;
+  
+
+  const newAdmin = new Admin({
+  
+    name,
+    
+  });
+  newAdmin.save()
+    .then(() => res.json('Admin updated!'))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
 router.route('/add').post((req, res) => {
   const username = req.body.username;
   const password = req.body.password;
@@ -19,6 +33,7 @@ router.route('/add').post((req, res) => {
     name,
     company,
   });
+  
 
   newAdmin.save()
     .then(() => res.json('Admin added!'))

@@ -26,6 +26,7 @@ const login = () => {
 			const { data: res } = await axios.post(url, data);
 			localStorage.setItem("token", res.data);
 			localStorage.setItem("currentLoggedAdmin",data.username);
+			localStorage.setItem("currentLoggedAdminName",data.name);
 			window.location = "/adminslist";
 		} catch (error) {
 			setError(error.response.data.error);

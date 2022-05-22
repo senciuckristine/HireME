@@ -1,6 +1,7 @@
 import React from 'react';
 import {useState,useEffect} from 'react';
 import "bootstrap/dist/css/bootstrap.min.css"
+import { Link } from 'react-router-dom';
 import Axios from "axios";
 //import styles from "../App.css";
 
@@ -43,16 +44,26 @@ function ShowAdminsList() {
   const createNewSurvey = () => {
     window.location = "/createSurvey";
   }
+  const editProfile = () =>{
+    window.location = "/editProfile";
+  }
   return (
     <body  background="back3.jpg">
     <div>
       <br></br>
-      <h7>My Profile</h7>
+      <div><h7>My Profile</h7>
+       <Link  onClick={editProfile} to="/editProfile">
+             <img  className="img2" src="editprofilelogo.png" alt="" width="35" height="38" left="80%"  />
+        </Link>
+        </div>
       <br></br>
       <br></br>
       <div className="grid">
       <br></br>
-      <h2>Personal information</h2>
+      <div className="img2" >
+      <h2 >Personal information</h2>
+      
+        </div>
       <div className="splitscreen" >
       <div className="left"> 
         <h4>Username: </h4>
