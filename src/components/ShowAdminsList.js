@@ -8,15 +8,17 @@ import Axios from "axios";
 
 function ShowAdminsList() {
   const [ListOfAdmins,setListOfAdmins] =useState([]);
-  const[username,setUserName]=useState("");
+  const[username1,setUserName]=useState("");
   const[name,setName]=useState("");
   const[company,setCompany]=useState("");
   const[password,setPassword]=useState("");
-
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
   //var user1 = JSON.parse(localStorage.getItem('currentUser'));
   const currentLogged = localStorage.getItem("currentLoggedAdmin");
 
-  const res = ListOfAdmins.filter(it => it.username.includes(currentLogged));
+  const res = ListOfAdmins.filter(it => it.username == currentLogged);
+  const aux = ListOfAdmins.filter(it => it.username == username1);
 
   useEffect(()=>{
      Axios.get("http://localhost:5000/admins/").then((response)=>{
@@ -25,8 +27,13 @@ function ShowAdminsList() {
   },[]);
 
   const createNewAdmin = () => {
+    if(username1.length >2){
+      if(name.length>2){
+        if(password.length>5){
+          if(company.length>2){
+            if(aux.length==0){
     Axios.post("http://localhost:5000/admins/add",{
-      username,
+      username:username1,
       password,
       name,
       company,
@@ -36,10 +43,30 @@ function ShowAdminsList() {
         {
           name,
           company,
-          username,
+          username1,
         },
       ]);
-    });
+      setError("");
+      setSuccess("Admin successfully added!");
+      });
+      setTimeout(() => {
+          setSuccess("");
+        }, 1000);
+      }else{
+        setError("This username is taken");
+      }
+  }else{
+    setError("You must enter a valid company(minimum 3 characters)!");
+  }
+  }else{
+    setError("You must enter a valid password(minimum 6 characters)!");
+  }
+  }else{
+    setError("You must enter a valid name (minimum 3 characters)!");
+  }
+  }else{
+    setError("You must enter a valid username(minimum 3 characters)!");
+  }
   };
   const createNewSurvey = () => {
     window.location = "/createSurvey";
@@ -119,7 +146,7 @@ function ShowAdminsList() {
      <br></br>
      <div className="splitscreen" >
        <div className="left"> 
-        <input   className="inputStyle" type="text" placeholder="UserName.." onChange={(event)=>{
+        <input   className="inputStyle" type="text" placeholder="UserName.." value={username1} onChange={(event)=>{
          setUserName(event.target.value);
          }}/>
          <br></br> <p>  </p>
@@ -134,7 +161,8 @@ function ShowAdminsList() {
        
        </div>
      </div>
-     
+     {error && <div className="alert">{error}</div>}
+                {success && <div className="success">{success}</div>}
      <button className="button0" onClick ={createNewAdmin}>Create new admin</button>
      <br></br>
      </div>
