@@ -132,7 +132,7 @@ td {
   text-align: left;
   padding: 8px;
   background-color: #c6e4e7;
-  
+  white-space: nowrap;
   
   
 }
@@ -348,6 +348,21 @@ textarea{
 .splitscreen .right{
   flex: 1;
   margin-right: 20%;
+}
+
+.splitscreen2{
+  display: flex;
+}
+
+.splitscreen2 .left{
+  flex: 1;
+  margin-left: 3%;
+ 
+
+}
+.splitscreen2 .right{
+  flex: 1;
+  margin-left: 5%;
 }
 
 .formStyle{
