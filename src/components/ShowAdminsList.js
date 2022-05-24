@@ -173,10 +173,14 @@ function ShowAdminsList() {
      <h4>Click on the button below to create a new survey:</h4>
      <button className="button0" onClick ={createNewSurvey}>Create your survey</button>
      <br></br>
+     <h4>Have you already created a survey ? Click <a href="/mySurveys">here</a> to see it. </h4>
+     
      </div>
      <br></br>
      <br></br>
     </div>
+    <br></br>
+    <br></br>
     </body>
   );
 }
