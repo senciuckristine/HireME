@@ -13,7 +13,7 @@ export default class HomePage extends Component {
       <div>
       <body background="back3.jpg">
       <div>
-      <br></br><br></br>
+      <br></br><br></br><br></br><br></br>
         <h6 align="center">Are you ready to start a new journey?</h6>
         <button className="button01" onClick={handleTakeSurvey}>Take a survey</button>
          </div>

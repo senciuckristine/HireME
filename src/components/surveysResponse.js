@@ -29,29 +29,26 @@ function surveysResponse(){
     let res3 = ListOfResponses;
     let myCodes = res.map(it => it.id);
     myCodes = [...new Set(myCodes)];
+    let code = localStorage.getItem("currentSurvey");
+    console.log(code);
     
 
     let  i =1;
     let j=1;
     let k=1;
 
-    const seeResponses = async (e) => {
-        e.preventDefault();
-        window.location = "/surveysResponse";
-    }
 
     return (
         <body  background="back3.jpg">
         <div>
           <br></br>
           <div><h7>Survey Responses</h7></div>
-          {myCodes.map((code)=>{
-          return(
+          
             <div>
                 <br></br><br></br>
             <div>  <form className='formStyle'>
                 <br></br>
-                <p className='h442'>  Survey no. {j} - id {code}</p><br></br>
+                <p className='h442'>  Survey id {code}</p><br></br>
                 <script>{j++}</script>
                 <script>{i=1}</script>
              {res2.filter(it => it.id === code).map((survey)=>{
@@ -87,13 +84,11 @@ function surveysResponse(){
                 )
             })}
             <br></br>
-            <button className="button0111"  onClick ={seeResponses}>See responses</button>
             <br></br></form>
             </div>
             </div>
             
-          );
-        })}
+          
           </div>
           <br></br><br></br>
           </body>

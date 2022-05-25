@@ -28,8 +28,11 @@ function seeMySurveys(){
     let  i =1;
     let j=1;
 
-    const seeResponses = async (e) => {
+    const seeResponses = (e,surveyId) => {
         e.preventDefault();
+        console.log(surveyId);
+        localStorage.setItem("currentSurvey",surveyId);
+        console.log(localStorage.getItem("currentSurvey"));
         window.location = "/surveysResponse";
     }
 
@@ -54,7 +57,7 @@ function seeMySurveys(){
                 )
             })}
             <br></br>
-            <button className="button0111"  onClick ={seeResponses}>See responses</button>
+            <button className="button0111"  onClick ={e => seeResponses(e,code)}>See responses</button>
             <br></br></form>
             </div>
             </div>

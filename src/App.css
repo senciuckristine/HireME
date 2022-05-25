@@ -214,6 +214,24 @@ th {
   position: absolute;
  
 }
+.button_4 {
+  top:  3%;
+  left: 73.5%;
+  background-color: #A6D4D9;
+  border: 2px solid rgb(254, 251, 251);
+  color: white !important;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  
+  cursor: pointer;
+  width: 110px;
+  line-height: 40px;
+  position: absolute;
+ 
+}
 .button{
   top: 4%;
   left:90%;
@@ -258,8 +276,8 @@ th {
   text-decoration: none;
   
   font-size: 17px;
-  margin-left: 40%;
-  margin-top:13%;
+  margin-left: 45%;
+  margin-top:10%;
   width: 200px;
   height: 60px;
   
@@ -428,8 +446,8 @@ textarea{
 }
 
 .admin-question{
-  top: 5%;
-  left: 68%;
+  top: 4%;
+  left: 75%;
   
   color: #5b5b5b !important;
   
