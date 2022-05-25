@@ -61,9 +61,11 @@ function surveysResponse(){
                     <script>{k=1}</script>
                     <table className="centerTable">
                         <tr>
-                        <th>No</th>
+                        <th>No.</th>
                         <th>Name</th>
                         <th>Answer</th>
+                        
+                    <script>{k=1}</script>
                     </tr>
                     {res3.filter(it => it.id === code).filter(it => it.question === survey.question ).map((response)=>{
                         return(
