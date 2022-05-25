@@ -10,6 +10,8 @@ import Logout from "./components/logout";
 import CreateSurvey from "./components/createSurvey";
 import TakeSurvey from "./components/TakeSurvey";
 import EditProfile from "./components/EditProfile";
+import MySurveys from "./components/mySurveys";
+import SurveysResponse from "./components/surveysResponse";
 
 const App = () =>(
   <BrowserRouter>
@@ -22,6 +24,8 @@ const App = () =>(
      <Route path="/createSurvey" element={<CreateSurvey/>}/>
      <Route path="/takeSurvey" element={<TakeSurvey/>}/>
      <Route path="/editProfile" element={<EditProfile/>}/>
+     <Route path="/mySurveys" element={<MySurveys/>}/>
+     <Route path="/surveysResponse" element={<SurveysResponse/>}/>
    </Routes >
   </BrowserRouter>
  
