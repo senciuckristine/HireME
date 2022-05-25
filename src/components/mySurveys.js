@@ -45,9 +45,9 @@ function seeMySurveys(){
           return(
             <div>
                 <br></br><br></br>
-            <div>  <form className='formStyle'>
+            <div>  <form className='formStyle3'>
                 <br></br>
-                <p className='h442'>  Survey no. {j} - id {code}</p><br></br>
+                <p className='h442'>  Survey no. {j} - code {code}</p><br></br>
                 <script>{j++}</script>
                 <script>{i=1}</script>
              {res2.filter(it => it.id === code).map((survey)=>{

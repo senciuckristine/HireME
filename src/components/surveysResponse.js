@@ -23,21 +23,18 @@ function surveysResponse(){
             
         });
      },[]);
-
-    const  res = ListOfCodes.filter(it => it.username === username);
+let code = localStorage.getItem("currentSurvey");
+    const  res = ListOfResponses;
     let res2 = ListOfQuestions.filter(it => it.username === username);
-    let res3 = ListOfResponses;
-    let myCodes = res.map(it => it.id);
-    myCodes = [...new Set(myCodes)];
-    let code = localStorage.getItem("currentSurvey");
-    console.log(code);
+    let res3 = ListOfResponses.filter(it => it.id === code);
+    console.log(res3);
+    let names = res3.map(it => it.name);
+    names = [...new Set(names)];
+    console.log(names);
     
-
     let  i =1;
-    let j=1;
-    let k=1;
-
-
+    let  j =1;
+ 
     return (
         <body  background="back3.jpg">
         <div>
@@ -46,45 +43,31 @@ function surveysResponse(){
           
             <div>
                 <br></br><br></br>
-            <div>  <form className='formStyle'>
+            <div>  
+            {names.map((name)=>{
+          return(  
+            <div>
+            <br></br><br></br>
+                <form className='formStyle2'>
                 <br></br>
-                <p className='h442'>  Survey id {code}</p><br></br>
-                <script>{j++}</script>
-                <script>{i=1}</script>
-             {res2.filter(it => it.id === code).map((survey)=>{
-                return(
-                    <div><p className='h44'>{i}. {survey.question}</p>
-                    <script>{i++}</script>
-                    <script>{k=1}</script>
-                    <table className="centerTable">
-                        <tr>
-                        <th>No.</th>
-                        <th>Name</th>
-                        <th>Answer</th>
-                        
-                    <script>{k=1}</script>
-                    </tr>
-                    {res3.filter(it => it.id === code).filter(it => it.question === survey.question ).map((response)=>{
-                        return(
-                           
-                                <tr>
-                                    <td> {k}</td>
-                                    <td>{response.name} </td>
-                                        <td>{response.answer}</td>
-                                        <script>{k++}</script>
-                                    </tr>
-                                
-                               
-                           
-                        )
-                    })}
-                    </table>
-                    <br></br>
-                    </div>
-                )
+                <p className='h443'>Response no. {i}</p>
+                <script>{i++}</script>
+                <script>{j=1}</script>
+                <p className='h44'>Name: {name}</p>
+                <br></br>
+                <p className='h442'>Answers</p>
+                {res.filter(it => it.name === name).map((response)=>{
+                    return (
+                        <div>
+                        <p className='h44q'>{j}. {response.question}</p>
+                        <p className='h44a'>A: {response.answer}</p>
+                        <script>{j++}</script>
+                        </div>
+                    )
+                })}
+            <br></br></form></div>
+          )
             })}
-            <br></br>
-            <br></br></form>
             </div>
             </div>
             
