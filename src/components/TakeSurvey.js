@@ -50,13 +50,16 @@ function takeSurvey(){
 }
 checkEvt();
   const addResponse = async (e) => {
+    /*for(i=2;i<6;i++){
+      console.log(document.getElementById(i).value);
+    }*/
     e.preventDefault();
     if(nume.length>0){
         for(k=0;k<res.length;k++){
           axios.post("http://localhost:5000/surveyResponses/add",{
               id: code,
               name: nume,
-              answer:answers[k],
+              answer:document.getElementById(k+2).value,
               question: res[k].question,
           }).then((response)=>{
             setError("");
@@ -137,28 +140,9 @@ checkEvt();
             <script>{i++}</script>
             </div>
             <div>
-            <textarea placeholder='Insert text' onChange={(event)=>{
-              if((event.target.value.length)>(aux.length)) 
-                {
-                  answers[j]=event.target.value; 
-                  aux=event.target.value;
-                  
-                } 
-              else if((event.target.value.length)===1)
-                {
-                  j++; 
-                  answers[j]=event.target.value; 
-                  aux=event.target.value;
-                }
-                
-              }}>
-            </textarea>
-            
-            
+            <textarea placeholder='Insert text' id={i} ></textarea>
+          
             <br></br><br></br>
-							
-							 
-           
            
             </div>
             </div>

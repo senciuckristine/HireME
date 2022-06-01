@@ -71,17 +71,13 @@ function ShowAdminsList() {
   const createNewSurvey = () => {
     window.location = "/createSurvey";
   }
-  const editProfile = () =>{
-    window.location = "/editProfile";
-  }
+  
   return (
     <body  background="back3.jpg">
     <div>
       <br></br>
       <div><h7>My Profile</h7>
-       <Link  onClick={editProfile} to="/editProfile">
-             <img  className="img2" src="editprofilelogo.png" alt="" width="35" height="38" left="80%"  />
-        </Link>
+      
         </div>
       <br></br>
       <br></br>
