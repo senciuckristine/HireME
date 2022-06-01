@@ -28,6 +28,9 @@ const removeSurveyToken = () =>{
 const handleSeeYourSurveys = () => {
   window.location = "/mySurveys";
 }
+const handleAboutUs = () => {
+  window.location = "/AboutUs";
+}
     return (
       
       <nav className="topnav">
@@ -55,6 +58,13 @@ const handleSeeYourSurveys = () => {
         </ul>
         <ul className ="topnav-right" >
          {user && <button className = "button_4 "  onClick={handleSeeYourSurveys}>Your surveys</button>}
+        
+          
+        </ul>
+
+        
+        <ul className ="topnav-right" >
+         <button className = "button_5 "  onClick={handleAboutUs}>About us</button>
         
           
         </ul>

@@ -11,6 +11,7 @@ import CreateSurvey from "./components/createSurvey";
 import TakeSurvey from "./components/TakeSurvey";
 import MySurveys from "./components/mySurveys";
 import SurveysResponse from "./components/surveysResponse";
+import AboutUs from "./components/aboutUs";
 
 const App = () =>(
   <BrowserRouter>
@@ -24,6 +25,7 @@ const App = () =>(
      <Route path="/takeSurvey" element={<TakeSurvey/>}/>
      <Route path="/mySurveys" element={<MySurveys/>}/>
      <Route path="/surveysResponse" element={<SurveysResponse/>}/>
+     <Route path="/AboutUs" element={<AboutUs/>}/>
    </Routes >
   </BrowserRouter>
  
